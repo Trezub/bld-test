@@ -51,13 +51,13 @@
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 # Getting started:
 1. Clone repo
-2. [Install docker](https://www.docker.com/products/docker-desktop)
-3. Install yarn if it isn't already installed: `npm i -g yarn`
-4. Install dependencies with `yarn`
-5. Once docker is installed and running, run the following commands
+2. [Install docker](https://www.docker.com/products/docker-desktop) (If you already have a postgres database running, you can jump to step 4)
+3. Once docker is installed and running, create the postgres container:
 ```
 docker run -p 5432:5432 --name pg -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=bld -d postgres
 ```
+4. Install yarn if it isn't already installed: `npm i -g yarn`
+5. Install dependencies with `yarn`
 ```
 yarn typeorm-dev migration:run
 ```
