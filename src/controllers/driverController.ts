@@ -39,8 +39,10 @@ export default {
                         const { city, state } = address;
                         return {
                             ...driver,
-                            city: city ?? '',
+                            cep: undefined,
+                            postalCode: driver.cep,
                             state: state ?? '',
+                            city: city ?? '',
                             vehicles: driver.vehicles
                                 .map((vehicle) => vehicle.plate)
                                 .join(', '),
